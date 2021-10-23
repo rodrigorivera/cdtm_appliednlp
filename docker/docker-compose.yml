@@ -13,6 +13,12 @@ services:
     tty: true
     env_file:
       - ../.env
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
+
 
   mlflow:
     build:
